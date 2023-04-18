@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="Description" content="Put your description here.">
+  <base href="/">
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: #fdfbfb;
+    }
+ .duplicate:hover{
+  background-color: green;
+}
+
+ .change:hover{
+  background-color: green;
+}
+
+
+.bg-color:hover{
+  background-color: green;
+}
+
+.delete:hover{
+  background-color: green;
+    }
+
+   
+  </style>
+  <title>team-card3</title>
+</head>
+
+<body>
+  <div class="buttons">
+  <button class="bg-color">Background Color</button>
+  <button onclick="changeHeading()"> Change Heading</button>
+  <button onclick="deleteLast()" class="delete">Remove card</button>
+  <button class="duplicate">Replicate</button>
+  <button data-toggle-btn>Toggle stats</button>
+  </div>
+  
+  <project1-redo gameT="Lit">
+   <img slot="imagelocation" src=""/>
+    <ul>
+      <li>103-90 Warriors</li>
+    </ul>
+  </project1-redo>
+  
+  
+
+  <script type="module" src="./src/project1-redo.js"></script>
+  <script>
+
+
+    const Dupe = function () {
+  console.log(btn);
+  const div1 = document.querySelector("team-card3");
+  var child = document.body.appendChild(div1.cloneNode(true));
+  child.classList.add("card2");
+  console.log(child);
+};
+
+const btn = document.querySelector(".duplicate");
+btn.addEventListener("click", Dupe);
+
+const bgColor = document.querySelector(".bg-color");
+bgColor.addEventListener("click", function (e) {
+//random item in an array
+const colors = ["blue", "red", "green"];
+const randomColor = colors[Math.floor(Math.random() * colors.length)];
+document.querySelector("team-card3").accentColor = randomColor;
+});
+
+
+function changeHeading() {
+  document.querySelector("team-card3").gameT = "MEME HAHAHAHA";
+}
+
+  function deleteLast() {
+  var x = document.querySelector(".card2");
+  x.remove(0);
+};
+
+//details toggle link in the chain
+document.querySelector("button[data-toggle-btn]").addEventListener('click', function (e) {
+const details = document.querySelector('team-card3').shadowRoot.querySelector('details');
+console.log(details);
+  if (details.getAttribute('open')) {
+    details.removeAttribute('open');
+  }
+   else {
+    details.setAttribute('open', 'open');
+  }
+});
+
+
+  </script>
+</body>
+
+</html>
