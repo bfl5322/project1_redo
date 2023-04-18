@@ -34,7 +34,7 @@
 
    
   </style>
-  <title>team-card3</title>
+  <title>project1-redo</title>
 </head>
 
 <body>
@@ -61,7 +61,7 @@
 
     const Dupe = function () {
   console.log(btn);
-  const div1 = document.querySelector("team-card3");
+  const div1 = document.querySelector("project1-redo");
   var child = document.body.appendChild(div1.cloneNode(true));
   child.classList.add("card2");
   console.log(child);
@@ -75,12 +75,12 @@ bgColor.addEventListener("click", function (e) {
 //random item in an array
 const colors = ["blue", "red", "green"];
 const randomColor = colors[Math.floor(Math.random() * colors.length)];
-document.querySelector("team-card3").accentColor = randomColor;
+document.querySelector("project1-redo").accentColor = randomColor;
 });
 
 
 function changeHeading() {
-  document.querySelector("team-card3").gameT = "MEME HAHAHAHA";
+  document.querySelector("project1-redo").gameT = "MEME HAHAHAHA";
 }
 
   function deleteLast() {
@@ -90,7 +90,7 @@ function changeHeading() {
 
 //details toggle link in the chain
 document.querySelector("button[data-toggle-btn]").addEventListener('click', function (e) {
-const details = document.querySelector('team-card3').shadowRoot.querySelector('details');
+const details = document.querySelector('project1-redo').shadowRoot.querySelector('details');
 console.log(details);
   if (details.getAttribute('open')) {
     details.removeAttribute('open');
